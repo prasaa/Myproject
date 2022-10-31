@@ -1,0 +1,47 @@
+.modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+
+}
+
+.modal-content{
+    background-color: $color-light;
+    width: 40%;
+    margin: 3% auto;
+    border-radius: 6px;
+}
+.modal-header{
+    padding: 20px;
+    background: $primary-color;
+    color: $color-light;
+    display: flex;
+    justify-content: space-between;
+    border-top-left-radius: 6px ;
+    border-top-right-radius: 6px;
+
+}
+.modal-title{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.modal-body{
+    min-height: 300px;
+    padding: 20px;
+}
+.modal-footer{
+    padding: 20px;
+    border-top: 1px solid $border-color;
+    text-align: right;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+
+    .primary-btn{
+        width: auto;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 14px 24px;
+    }
+}

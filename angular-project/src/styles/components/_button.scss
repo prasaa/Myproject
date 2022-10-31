@@ -1,0 +1,23 @@
+.primary-btn{
+    cursor: pointer;
+    border: 0;
+    border-radius: 4px;
+    font-weight: 600;
+    width: 100%;
+    padding: 14px 0;
+    background: #102256;
+    color: #fff;
+
+    &:hover{
+        background-color: $primary-color-light;
+    }
+}
+.secondary-btn{
+    cursor: pointer;
+    border: 0;
+    border-radius: 4px;
+    font-weight: 600;
+    padding: 14px 0;
+    background: $secondary-color;
+    color: #fff;
+}

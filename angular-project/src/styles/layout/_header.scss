@@ -1,0 +1,33 @@
+.header{
+    position: fixed;
+    background-color: $primary-color;
+    padding: 20px;
+    width: 100%;
+    height: 60px;
+
+    &__left{
+        h2{
+            font-size: 22px;
+            font-weight: 900;
+            color: $color-light;
+            margin: 0;
+        }
+        span{
+            color:$secondary-color;
+        }
+      
+    }
+    &__right{
+        float: right;
+        margin-top: -27px;
+        .primary-btn{
+            background-color: $secondary-color;
+            padding: 10px;
+
+            &:hover{
+                background-color: #308D44;
+            }
+           
+        }
+    }
+}

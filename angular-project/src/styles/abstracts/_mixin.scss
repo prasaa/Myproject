@@ -1,0 +1,22 @@
+@mixin login{
+    display: flex;
+    height: 100vh;
+    background: #fff;
+    overflow: hidden;
+
+    &__block{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__headings{
+        line-height: 1.4;
+        font-size: $headings;
+        color: $color-light;
+
+        &--right{
+            color: $primary-color;           
+        }
+    }
+}

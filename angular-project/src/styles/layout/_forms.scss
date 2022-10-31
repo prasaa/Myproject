@@ -1,0 +1,49 @@
+.login {
+    &__form {
+        width: 100%;
+        padding: 0 20px;
+        text-align: left;
+
+        h2 {
+            color: $primary-color;
+        }
+    }
+
+    .form {
+        display: block;
+        margin: 10px 0;
+
+        .form-field {
+            input {
+                padding: 10px 0;
+                width: 100%;
+                border: none;
+                border-bottom: 1px solid $color-dark;
+                outline: none;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+.form-wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+
+    .form-group {
+        margin-bottom: 10px;
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border-color: #ccc;
+            border: 1px solid #ccc;
+
+            &:focus-visible{
+                border: 2px solid $secondary-color;
+                outline: none;
+            }
+        }
+    }
+}

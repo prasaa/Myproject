@@ -1,0 +1,109 @@
+.login {
+    @include login;
+
+    &__block {
+        background-image: url('../../assets/images/background.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 55%;
+        text-align: center;
+
+        &--secondary {
+            margin: 0 auto;
+            background-image: none;
+            width: 45%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &__left {
+        padding: 30px;
+        width: 100%;
+        overflow: hidden;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    &__right {
+        padding-left: 24px;
+        padding-right: 24px;
+        max-width: 400px;
+
+        .login{
+            &__footer,
+            &__footer-link{
+                font-size: 14px;
+                color: $disable-color;
+            }
+        }
+    }
+
+    &__headings {
+
+        &--right {
+            padding-bottom: 44px;
+        }
+    }
+}
+
+.slider {
+    position: relative;
+    width: 700px;
+    height: 350px;
+    overflow: hidden;
+}
+
+.img_container {
+    position: absolute;
+    top: 0;
+    left: -35px;
+    z-index: 7;
+
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    transform: translateX(450px);
+    background-image: url(../../assets/images/img1.png);
+    background-size: 400px;
+    animation: slide_animation 28s cubic-bezier(0, 0, 0, 0.97) infinite;
+
+    &--two {
+        z-index: 6;
+        background-image: url(../../assets/images/img2.png);
+        animation-delay: 7s;
+    }
+
+    &--three {
+        z-index: 5;
+        background-image: url(../../assets/images/img3.png);
+        animation-delay: 14s;
+    }
+
+    &--four {
+        z-index: 4;
+        background-image: url(../../assets/images/img2.png);
+        animation-delay: 21s;
+    }
+}
+
+@keyframes slide_animation {
+    3% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(0);
+    }
+
+    28% {
+        transform: translateX(-700px);
+    }
+
+    100% {
+        transform: translateX(-700px);
+    }
+}

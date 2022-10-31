@@ -1,0 +1,55 @@
+<header class="header">
+    <div class="header__left">
+        <h2>ANGULAR <span>CRUD</span></h2>
+    </div>
+    <div class="header__right">
+        <button (click)="openModal(1)" class="primary-btn">Add Employee</button>
+    </div>
+</header>
+<div class="sidebar">
+    <div class="center">
+        <img class="admin-pic" src="../../assets/images/profile.jpg" alt="profilepic">
+        <h3>Admin</h3>
+    </div>
+    <a><i class="fa-solid fa-desktop"></i><span>Dashboard</span></a>
+    <a><i class="fa-solid fa-table"></i><span>Employee List</span></a>
+    <a><i class="fa-solid fa-door-open"></i><span>Logout</span></a>
+
+</div>
+
+<!-- modalbox -->
+
+<div class="modal" id="modal-box" *ngIf="showModal === 1">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Employee Detail Form</h4>
+            <button (click)="close()" type="button" class="close">X
+            </button>
+        </div>
+        <div class="modal-body">
+            <form class="form-wrapper">
+                <div class="form-group">
+                    <input type="text" placeholder="Enter employee's name">
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="contact no">
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Department">
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Position">
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Date of Joining">
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Salary">
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="primary-btn">Save</button>
+        </div>
+    </div>
+</div>
