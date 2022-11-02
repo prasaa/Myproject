@@ -12,8 +12,8 @@
         <h3>Admin</h3>
     </div>
     <a routerLink="/dashboard" [routerLinkActive]="'active-link'"><i class="fa-solid fa-desktop"></i><span>Dashboard</span></a>
-    <a [routerLink]="['/employee-list']" [routerLinkActive]="'active-link'" (click)="employeeList()"><i class="fa-solid fa-table"></i><span>Employee List</span></a>
-    <a  [routerLink]="['/login']"  [routerLinkActive]="'active-link'" (click)="logout()"><i class="fa-solid fa-door-open"></i><span>Logout</span></a>
+    <a [routerLink]="['/employee-list']" [routerLinkActive]="'active-link'" ><i class="fa-solid fa-table"></i><span>Employee List</span></a>
+    <a  [routerLinkActive]="'active-link'" (click)="logout()"><i class="fa-solid fa-door-open"></i><span>Logout</span></a>
 
 </div>
 
@@ -30,34 +30,7 @@
         </div>
         
     </div>
-   <table class="table">
-    <thead>
-        <tr>
-            <th>List of candidate's biodata</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td>can1.doc</td>   
-            <td class="action-btn action-btn--secondary">
-            <a><i class="fa fa-trash-can"></i></a>
-        </td></tr>
-            <tr><td>vita.png</td>
-                <td class="action-btn action-btn--secondary">
-                    <a><i class="fa fa-trash-can"></i></a>
-                </td></tr>
-            <tr><td>can1.jpg</td>
-                <td class="action-btn action-btn--secondary">
-                    <a><i class="fa fa-trash-can"></i></a>
-                </td></tr>
-            <tr><td>can1.pdf</td>
-            <td class="action-btn action-btn--secondary">
-                <a><i class="fa fa-trash-can"></i></a>
-            </td>
-        </tr>
-    </tbody>
-   </table>
-   
+    <app-biodata (cvSelectedEventEmitter)="openSelectedCv($event)"  [cvList]="biodata"></app-biodata>   
 </div>
 
 <!-- modalbox -->

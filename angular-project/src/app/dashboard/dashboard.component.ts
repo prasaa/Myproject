@@ -15,10 +15,13 @@ export class DashboardComponent implements OnInit {
   employeeFormValue !: FormGroup;
   employeeData !: any;
 
-
-
   constructor(private http: HttpClient, private router: Router, private formbuilder: FormBuilder, private api: ApiService) { }
 
+    biodata = ['person1cv.jpg','person2cv.doc','personcv3.pdf'];
+
+    openSelectedCv(data:any){
+      alert(data +"opened");
+    }
   ngOnInit(): void {
     this.employeeFormValue = this.formbuilder.group({
       empName : ['', Validators.required],
@@ -61,9 +64,6 @@ export class DashboardComponent implements OnInit {
   }
 
 
-  employeeList() {
-    this.router.navigate(['/employee-list']);
-  }
   logout() {
     this.router.navigate(['/login']);
   }

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
+import { BiodataComponent } from './biodata/biodata.component';
 const routes: Routes = [
   {
     path:'',
@@ -29,4 +30,5 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
     
-    export const routingComponents = [LoginComponent, DashboardComponent, EmployeeListComponent]
+    export const routingComponents = [LoginComponent, 
+      DashboardComponent, EmployeeListComponent, BiodataComponent]
