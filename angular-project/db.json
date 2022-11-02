@@ -1,0 +1,106 @@
+{
+  "employeeList": [
+    {
+      "id": 4,
+      "empName": "asd",
+      "contact": "sdf",
+      "dept": "sf",
+      "position": "szd",
+      "joinDate": "3",
+      "salary": "sdf"
+    },
+    {
+      "id": 5,
+      "empName": "ersd",
+      "contact": "dsafdsafas",
+      "dept": "sdc",
+      "position": "ds",
+      "joinDate": "ds",
+      "salary": "sd"
+    },
+    {
+      "id": 6,
+      "empName": "pasa",
+      "contact": "8876543",
+      "dept": "dfshd",
+      "position": "gfgf",
+      "joinDate": "7 jan",
+      "salary": "3456"
+    },
+    {
+      "id": 7,
+      "empName": "dxc",
+      "contact": "xdc",
+      "dept": "xdc",
+      "position": "x",
+      "joinDate": "xzd",
+      "salary": "x "
+    }
+  ],
+  "signUpUsers": [
+    {
+      "firstname": "xc",
+      "lastname": "czx",
+      "yourMail": "zxc2@gmail.com",
+      "newPassword": "gfhjkcvd",
+      "id": 1
+    },
+    {
+      "firstname": "sdsd",
+      "lastname": "safa",
+      "yourMail": "fd",
+      "newPassword": "af",
+      "id": 2
+    },
+    {
+      "firstname": "xzs",
+      "lastname": "zsd",
+      "yourMail": "sad",
+      "newPassword": "sd",
+      "id": 3
+    },
+    {
+      "firstname": "sdf",
+      "lastname": "sdf",
+      "yourMail": "sdf",
+      "newPassword": "sdf",
+      "id": 4
+    },
+    {
+      "firstname": "sd",
+      "lastname": "sd",
+      "yourMail": "ad",
+      "newPassword": "asd",
+      "id": 5
+    },
+    {
+      "firstname": "dvfs",
+      "lastname": "df",
+      "yourMail": "xzdf",
+      "newPassword": "xzd",
+      "id": 6
+    },
+    {
+      "firstname": "xzdc",
+      "lastname": "sd",
+      "yourMail": "sd",
+      "newPassword": "sd",
+      "id": 7
+    },
+    {
+      "firstname": "prasa",
+      "lastname": "mrz",
+      "yourMail": "prasa@gmail.com",
+      "newPassword": "123456",
+      "id": 8
+    },
+    {
+      "firstname": "s",
+      "lastname": "sd",
+      "yourMail": "d@gmail.com",
+      "newPassword": "dadafff",
+      "id": 9
+    }
+  ],
+  "profile": []
+}

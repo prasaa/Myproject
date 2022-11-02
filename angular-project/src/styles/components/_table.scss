@@ -1,0 +1,40 @@
+.table{
+    width: 100%;
+    min-width: 400px;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    box-shadow: rgb(0 0 0 / 5%) 0px 6px 24px 0px, rgb(0 0 0 / 8%) 0px 0px 0px 1px;
+    margin: 25px auto;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    
+
+    thead tr th{
+        background-color: #f3f3f3;
+        text-align: left;
+        font-weight: bold;
+        border-top: 2px solid $secondary-color;
+        border-bottom: 2px solid $secondary-color;
+
+    }
+
+    th,td{
+        padding: 12px 15px;
+    }
+
+    tbody tr{
+        border-bottom: 1px solid $border-color;
+
+        &:nth-of-type(even){
+            background-color: #f3f3f3;
+        }
+
+        &:last-of-type{
+            border-bottom: 2px solid $secondary-color;
+        }
+    }
+
+    
+
+}
+

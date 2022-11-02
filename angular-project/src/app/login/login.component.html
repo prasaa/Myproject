@@ -1,53 +1,109 @@
 <div class="login">
-    <div class="login__block">
-      <div class="login__left">
-        <div class="slider">
-            <div class="img_container img_container-one">
-                <!-- <img src="../../assets/images/img1.png" alt="image1"> -->
-            </div>
-            <div class="img_container img_container--two">
-                <!-- <img src="../../assets/images/img2.png" alt="image2"> -->
-            </div>
-            <div class="img_container img_container--three">
-                <!-- <img src="../../assets/images/img3.png" alt="image3"> -->
-            </div>
-            <div class="img_container img_container--four">
-                <!-- <img src="../../assets/images/img3.png" alt="image3"> -->
-            </div>
+  <div class="login__block">
+    <div class="login__left">
+      <div class="slider">
+        <div class="img_container img_container-one">
+          <!-- <img src="../../assets/images/img1.png" alt="image1"> -->
+        </div>
+        <div class="img_container img_container--two">
+          <!-- <img src="../../assets/images/img2.png" alt="image2"> -->
+        </div>
+        <div class="img_container img_container--three">
+          <!-- <img src="../../assets/images/img3.png" alt="image3"> -->
+        </div>
+        <div class="img_container img_container--four">
+          <!-- <img src="../../assets/images/img3.png" alt="image3"> -->
+        </div>
 
-        </div>
-        <div class="login__headings">
-          <h1>Hello World!!!</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Curabitur et est sed felis aliquet sollicitudin</p>
-        </div>
+      </div>
+      <div class="login__headings">
+        <h1>Hello World!!!</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Curabitur et est sed felis aliquet sollicitudin</p>
       </div>
     </div>
+  </div>
 
-    <div class="login__block login__block--secondary">
-        <div class="login__right">
-          <div class="login__headings login__headings--right">
-            <h1>Welcome!</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Curabitur et est sed felis aliquet sollicitudin</p>
-          </div>
-          <div class="login__form">
-            <h2>Login</h2>
-            <form class="form">
-              <div class="form-field">
-                <input type="email" name='email' id="email" placeholder="Email" required>
-              </div>
-              <div class="form-field">
-                <input type="password" id="password" placeholder="Enter password" required>
-              </div>
-              <button class="primary-btn" type="submit">Login</button>
-            </form>      
-          </div>
-          <p class="login__footer">Don't have an account yet?
-            <a class="login__footer-link">Sign Up</a>
-          </p>
-        </div>
+  <div class="login__block login__block--secondary">
+    <div class="login__right">
+      <div class="login__headings login__headings--right">
+        <h1>Welcome!</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Curabitur et est sed felis aliquet sollicitudin</p>
       </div>
+      <div class="login__form">
+        <h2>Login</h2>
+        <form class="form" [formGroup]="loginForm" (ngSubmit)="login()">
+          <div class="form-field">
+            <input type="email" formControlName="email" name='email' id="email" placeholder="Email" required>
+            <div *ngIf="email && email.invalid && email.touched" style="color:red">
+              <span *ngIf="email.errors?.['required']">Email is required</span>
+              <span *ngIf="email.errors?.['email']">
+                Please enter valid email
+              </span>
+            </div>
+          </div>
+          <div class="form-field">
+            <input type="password" formControlName="password" name='password' id="password" placeholder="Enter password"
+              required>
+            <div *ngIf="password && password.invalid && password.touched" style="color:red">
+              Password is required
+            </div>
+          </div>
+          <button class="primary-btn" [disabled]="loginForm.invalid" type="submit" [routerLink]="['/dashboard']">Login</button>
+        </form>
+      </div>
+      <p class="login__footer">Don't have an account yet?
+        <a class="login__footer-link" (click)="openModal(1)"><span>Sign Up</span></a>
+      </p>
+    </div>
+  </div>
 </div>
 
 
+
+
+
+<div class="modal" id="modal-box" *ngIf="showModal === 1">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">Sign Up</h4>
+      <button (click)="close()" type="button" class="close">X
+      </button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="regForm" (ngSubmit)="register()" class="form-wrapper">
+        <div class="form-group">
+          <input type="text" placeholder="First name" name='firstname' formControlName="firstname" required>
+          <div *ngIf="firstname && firstname.invalid && firstname.touched" style="color:red">
+                      Firstname is required
+                    </div>
+        </div>
+        <div class="form-group">
+          <input type="text" placeholder="Last name" name='lastname' formControlName="lastname" required>
+          <div *ngIf="lastname && lastname.invalid && lastname.touched" style="color:red">
+                      lastname is required
+                    </div>
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="Enter your email" name='yourMail' formControlName="yourMail" required>
+          <div *ngIf="regemail && regemail.invalid && regemail.touched" style="color:red">
+                      <span *ngIf="regemail.errors?.['required']">Email is required</span>
+                      <span *ngIf="regemail.errors?.['email']">
+                      Please enter valid email
+                      </span> 
+                    </div>
+        </div>
+        <div class="form-group">
+          <input type="text" placeholder="New password" name='newPassword' formControlName="newPassword" required>
+          <div *ngIf="regpassword && regpassword.invalid && regpassword.touched" style="color:red">
+            Password must have at least 6 character,digits..
+                    </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="primary-btn" [disabled]="regForm.invalid">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

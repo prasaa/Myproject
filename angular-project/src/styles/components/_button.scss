@@ -12,12 +12,30 @@
         background-color: $primary-color-light;
     }
 }
+
+button:disabled {
+    background-color: $color-light;
+    border: 1px solid $border-color;
+    color: $border-color;
+    pointer-events: none;
+    
+ }
 .secondary-btn{
     cursor: pointer;
     border: 0;
     border-radius: 4px;
     font-weight: 600;
-    padding: 14px 0;
+    padding: 14px;
     background: $secondary-color;
     color: #fff;
+}
+.action-btn{
+    display: flex;
+    justify-content: space-around;
+
+    &--secondary{
+        justify-content: flex-start;
+    }
+
+  
 }

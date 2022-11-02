@@ -1,0 +1,96 @@
+<header class="header">
+    <div class="header__left">
+        <h2>ANGULAR <span>CRUD</span></h2>
+    </div>
+    <div class="header__right">
+        <button (click)="addEmpDetails()" class="primary-btn">Add Employee</button>
+    </div>
+</header>
+<div class="sidebar">
+    <div class="center">
+        <img class="admin-pic" src="../../assets/images/profile.jpg" alt="profilepic">
+        <h3>Admin</h3>
+    </div>
+    <a [routerLink]="['/dashboard']" (click)="gotoDashboard()"><i class="fa-solid fa-desktop"></i><span>Dashboard</span></a>
+    <a [routerLink]="['/employee-list']" [routerLinkActive]="'active-link'" (click)="employeeList()"><i class="fa-solid fa-table"></i><span>Employee
+            List</span></a>
+    <a [routerLink]="['/login']" (click)="logout()"><i class="fa-solid fa-door-open"></i><span>Logout</span></a>
+
+</div>
+
+
+
+<div class="main-content">
+    <div class="card">
+        <div class="card__header">
+            <h4>Employee Details</h4>
+        </div>
+        </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Employee Name</th>
+                <th>Contact No</th>
+                <th>Department</th>
+                <th>Position</th>
+                <th>Date of Joining</th>
+                <th>Salary</th>
+                <th>Action</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of employeeData">
+                <td>{{row.id}}</td>
+                <td>{{row.empName}}</td>
+                <td>{{row.contact}}</td>
+                <td>{{row.dept}}</td>
+                <td>{{row.position}}</td>
+                <td>{{row.joinDate}}</td>
+                <td>{{row.salary}}</td>
+                <td class="action-btn">
+                    <a (click)="editEmployeeData(row)" type="button"><i class="fa fa-user-pen"></i></a>
+                    <a (click)="deleteEmployee(row)"><i class="fa fa-trash-can"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="modal" id="modal-box" *ngIf="showModal === 1">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Employee Detail Form</h4>
+            <button (click)="close()" type="button" class="close">X
+            </button>
+        </div>
+        <div class="modal-body">
+            <form class="form-wrapper" [formGroup]="employeeFormValue">
+                <div class="form-group">
+                    <input type="text" placeholder="Enter employee's name" formControlName="empName" >
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="contact no" formControlName="contact">
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Department" formControlName="dept">
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Position" formControlName="position">
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Date of Joining" formControlName="joinDate">
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Salary" formControlName="salary">
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button *ngIf="showAdd" (click)="saveEmpDetails()" class="primary-btn">Save</button>
+            <button *ngIf="showUpdate" (click)="updateEmpDetails()" class="primary-btn">Update</button>
+
+        </div>
+    </div>
+</div>

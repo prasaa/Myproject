@@ -11,10 +11,53 @@
         <img class="admin-pic" src="../../assets/images/profile.jpg" alt="profilepic">
         <h3>Admin</h3>
     </div>
-    <a><i class="fa-solid fa-desktop"></i><span>Dashboard</span></a>
-    <a><i class="fa-solid fa-table"></i><span>Employee List</span></a>
-    <a><i class="fa-solid fa-door-open"></i><span>Logout</span></a>
+    <a routerLink="/dashboard" [routerLinkActive]="'active-link'"><i class="fa-solid fa-desktop"></i><span>Dashboard</span></a>
+    <a [routerLink]="['/employee-list']" [routerLinkActive]="'active-link'" (click)="employeeList()"><i class="fa-solid fa-table"></i><span>Employee List</span></a>
+    <a  [routerLink]="['/login']"  [routerLinkActive]="'active-link'" (click)="logout()"><i class="fa-solid fa-door-open"></i><span>Logout</span></a>
 
+</div>
+
+<div class="main-content">
+    <div class="card">
+        <div class="card__header">
+            <h4>Upload File</h4>
+        </div>
+        <div class="card__body">
+            <input type="file" (change)="onFileSelected($event)">
+            <div class="card__footer">
+                <button class="secondary-btn" (click)="upload()" type="submit">Upload</button>
+            </div>
+        </div>
+        
+    </div>
+   <table class="table">
+    <thead>
+        <tr>
+            <th>List of candidate's biodata</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>can1.doc</td>   
+            <td class="action-btn action-btn--secondary">
+            <a><i class="fa fa-trash-can"></i></a>
+        </td></tr>
+            <tr><td>vita.png</td>
+                <td class="action-btn action-btn--secondary">
+                    <a><i class="fa fa-trash-can"></i></a>
+                </td></tr>
+            <tr><td>can1.jpg</td>
+                <td class="action-btn action-btn--secondary">
+                    <a><i class="fa fa-trash-can"></i></a>
+                </td></tr>
+            <tr><td>can1.pdf</td>
+            <td class="action-btn action-btn--secondary">
+                <a><i class="fa fa-trash-can"></i></a>
+            </td>
+        </tr>
+    </tbody>
+   </table>
+   
 </div>
 
 <!-- modalbox -->
@@ -27,29 +70,29 @@
             </button>
         </div>
         <div class="modal-body">
-            <form class="form-wrapper">
+            <form [formGroup]="employeeFormValue" class="form-wrapper">
                 <div class="form-group">
-                    <input type="text" placeholder="Enter employee's name">
+                    <input type="text" formControlName="empName" placeholder="Enter employee's name">
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="contact no">
+                    <input type="text" formControlName="contact" placeholder="contact no">
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Department">
+                    <input type="text" formControlName="dept" placeholder="Department">
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Position">
+                    <input type="text" formControlName="position" placeholder="Position">
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Date of Joining">
+                    <input type="text" formControlName="joinDate" placeholder="Date of Joining">
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Salary">
+                    <input type="text" formControlName="salary" placeholder="Salary">
                 </div>
             </form>
         </div>
         <div class="modal-footer">
-            <button class="primary-btn">Save</button>
+            <button class="primary-btn" (click)="saveEmpDetails()">Save</button>
         </div>
     </div>
 </div>
