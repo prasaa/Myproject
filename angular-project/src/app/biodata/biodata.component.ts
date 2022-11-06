@@ -13,7 +13,7 @@ export class BiodataComponent implements OnInit {
 
   @Output()
   cvSelectedEventEmitter = new EventEmitter();
-
+// here cvSelectedEventEmitter is customevent
   cvSelected(cv: any){
     this.cvSelectedEventEmitter.emit(cv);
   }

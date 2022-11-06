@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { ApiService } from '../services/api.service';
 import { EmployeeModel } from '../dashboard/dashboard.model';
 
@@ -27,9 +27,41 @@ export class EmployeeListComponent implements OnInit {
       position : ['', Validators.required],
       joinDate : ['', Validators.required],
       salary : ['', Validators.required],
+      qualification : this.formbuilder.array([
+        this.newQualification()
+        
+      ])
+
+      
     })
+    //console.log(this.employeeFormValue)
     this.getEmployeeList();
   }
+ 
+get qualific(): FormArray {
+
+  return this.employeeFormValue.get("qualification") as FormArray;
+  
+}
+
+newQualification(): FormGroup{
+  return this.formbuilder.group({
+    academy:'',
+    faculty:'',
+    year:'',
+    gpa:'',
+
+  })
+}
+
+addQualification(){
+  this.qualific.push(this.newQualification());
+  console.log(this.employeeFormValue);
+}
+
+removeQualification(i:number){
+  this.qualific.removeAt(i);
+}
 
   addEmpDetails(){
     this.openModal(1);
@@ -45,6 +77,9 @@ export class EmployeeListComponent implements OnInit {
     this.employeeModelObj.position = this.employeeFormValue.value.position;
     this.employeeModelObj.joinDate = this.employeeFormValue.value.joinDate;
     this.employeeModelObj.salary = this.employeeFormValue.value.salary;
+    this.employeeModelObj.qualification = this.employeeFormValue.value.qualification;
+
+
     
     this.api.postEmployee(this.employeeModelObj)
     .subscribe({
@@ -111,7 +146,9 @@ export class EmployeeListComponent implements OnInit {
       dept: row.dept,
       position: row.position,
       joinDate: row.joinDate,
-      salary: row.salary
+      salary: row.salary,
+      qualification: row.qualification
+      
       
     });
 
@@ -124,6 +161,8 @@ export class EmployeeListComponent implements OnInit {
     this.employeeModelObj.position = this.employeeFormValue.value.position;
     this.employeeModelObj.joinDate = this.employeeFormValue.value.joinDate;
     this.employeeModelObj.salary = this.employeeFormValue.value.salary;
+    this.employeeModelObj.qualification = this.employeeFormValue.value.qualification;
+
     this.api.putEmployee(this.employeeModelObj,this.employeeModelObj.id)
     .subscribe({
       next:(res)=>{

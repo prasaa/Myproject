@@ -1,40 +1,38 @@
 {
   "employeeList": [
     {
-      "id": 4,
-      "empName": "asd",
-      "contact": "sdf",
-      "dept": "sf",
-      "position": "szd",
-      "joinDate": "3",
-      "salary": "sdf"
-    },
-    {
-      "id": 5,
-      "empName": "ersd",
-      "contact": "dsafdsafas",
-      "dept": "sdc",
-      "position": "ds",
-      "joinDate": "ds",
-      "salary": "sd"
-    },
-    {
-      "id": 6,
-      "empName": "pasa",
-      "contact": "8876543",
-      "dept": "dfshd",
-      "position": "gfgf",
+      "id": 1,
+      "empName": "mina",
+      "contact": "897372856",
+      "dept": "it",
+      "position": "manager",
       "joinDate": "7 jan",
-      "salary": "3456"
+      "salary": "100000",
+      "qualification": [
+        {
+          "academy": "KBC",
+          "faculty": "BIT",
+          "year": "2009",
+          "gpa": "3.4"
+        }
+      ]
     },
     {
-      "id": 7,
-      "empName": "dxc",
-      "contact": "xdc",
-      "dept": "xdc",
-      "position": "x",
-      "joinDate": "xzd",
-      "salary": "x "
+      "id": 2,
+      "empName": "dfsdf",
+      "contact": null,
+      "dept": null,
+      "position": null,
+      "joinDate": null,
+      "salary": null,
+      "qualification": [
+        {
+          "academy": "yuhds",
+          "faculty": "sdf",
+          "year": "sd",
+          "gpa": "sd"
+        }
+      ]
     }
   ],
   "signUpUsers": [

@@ -1,4 +1,4 @@
-.primary-btn{
+.primary-btn {
     cursor: pointer;
     border: 0;
     border-radius: 4px;
@@ -8,7 +8,7 @@
     background: #102256;
     color: #fff;
 
-    &:hover{
+    &:hover {
         background-color: $primary-color-light;
     }
 }
@@ -18,9 +18,10 @@ button:disabled {
     border: 1px solid $border-color;
     color: $border-color;
     pointer-events: none;
-    
- }
-.secondary-btn{
+
+}
+
+.secondary-btn {
     cursor: pointer;
     border: 0;
     border-radius: 4px;
@@ -29,17 +30,41 @@ button:disabled {
     background: $secondary-color;
     color: #fff;
 }
-.action-btn{
+
+.action-btn {
     display: flex;
     justify-content: space-around;
 
-    &--secondary{
+    &--secondary {
         justify-content: flex-start;
-        
-        input{
+
+        input {
             margin-right: 20px;
         }
     }
 
-  
+
+}
+
+.tertiary-btn {
+    cursor: pointer;
+    padding: 7px 10px 7px 7px;
+    background: #EEEEEE;
+    border: none;
+    color: #8A8F95;
+    font-size: 12px;
+
+    i {
+        font-size: 20px;
+        line-height: 12px;
+        display: inline-block;
+        position: relative;
+        top: 2px;
+        margin-right: 3px;
+    }
+
+    &:hover{
+        outline: 1px solid $primary-color;
+        color: $primary-color;
+    }
 }

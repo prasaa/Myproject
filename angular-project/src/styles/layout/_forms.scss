@@ -45,5 +45,14 @@
                 outline: none;
             }
         }
+        button{
+            margin-top: 4px;
+        }
     }
+}
+
+.input-group{
+    display: flex;
+    column-gap: 10px;
+
 }
